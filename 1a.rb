@@ -1,9 +1,7 @@
 # typed: true
 
-extend T::Sig
-
 all_num = T.let([], T::Array[Integer])
-sum = 0
+sum = T.let(0, Integer)
 
 File.open(ARGV[0]).each_line do |line|
   break if line.empty?
