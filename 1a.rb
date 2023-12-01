@@ -1,13 +1,17 @@
-all_num = []
+# typed: true
+
+extend T::Sig
+
+all_num = T.let([], T::Array[Integer])
 sum = 0
 
 File.open(ARGV[0]).each_line do |line|
   break if line.empty?
 
-  arr = []
+  arr = T.let([], T::Array[Integer])
 
-  a = false
-  b = false
+  a = T.let(false, T::Boolean)
+  b = T.let(false, T::Boolean)
 
   line.each_char do |char|
     unless char.to_i.zero? || a
